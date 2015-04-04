@@ -13,7 +13,7 @@ class IndexController extends \Owl\Mvc\Controller
 {
     /**
      * @Get
-     * @Url("/", name="default")
+     * @Url("/api/", name="default")
      */
     public function indexAction()
     {
