@@ -16,6 +16,7 @@ include_once __DIR__ . '/../vendor/autoload.php';
 $eventManager = new \Owl\Event\Manager();
 
 $profiler = new Owl\Debug\Profiler();
+$profiler->setAssetsUri('//assets.owl.local/profiler/min.css');
 $profiler->listen($eventManager);
 
 $serviceManager = new Owl\Service\Manager();
@@ -32,7 +33,6 @@ $router->add('/users/:id', ['module' => 'Api', 'controller' => 'User', 'action' 
 $router->add('/users/:id', ['module' => 'Api', 'controller' => 'User', 'action' => 'delete'], Route::DELETE);
 
 $serviceManager->setService('router', $router);
-
 
 $driver = new \Owl\DBAl\Driver\Mysql(
     'mysql:host=127.0.0.1;dbname=phalcon-module-skeleton;port=49153',
